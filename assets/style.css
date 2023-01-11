@@ -268,7 +268,7 @@
             box-shadow: 0 0 1em;
             }
 
-/*  ----------------------------------------------------    style le-club   ---------------------------------------- */
+/*  ----------------------------------------------------    style les cours   ---------------------------------------- */
             .body-les-cours header{
                 margin: 0 10%;
             }
@@ -337,7 +337,7 @@
                 text-align: center;
             }
 
-            input {
+            input{
                 border-radius: 5px;
             }
 
@@ -400,4 +400,31 @@
 
                 .video a, .photo a{
                     margin-top: 40px;
+                }
+
+/*  ----------------------------------------------------    style Galerie  ---------------------------------------- */
+                section.contact{
+                    text-align: center;
+                    align-items: center;
+                }
+
+                section.contact form{
+                    width: 60%;
+                    margin-left: auto;
+                    margin-right: auto;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 20px;
+                }
+
+                section.contact form input{
+                    width:50%;
+                }
+                section.contact form textarea{
+                    width:100%;
+                }
+                section.contact form button{
+                    width:30%;
+                    margin-left: auto;
+                    margin-right: auto;
                 }
