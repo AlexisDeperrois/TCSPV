@@ -1,0 +1,93 @@
+header{
+    background-color: #212529;
+    color: rgb(185, 185, 185);
+    height: 80px;
+}
+nav{
+    display:flex;
+    gap: 30px;    
+}
+a{
+    color: white;
+    text-decoration: none;
+        
+}
+
+a:hover{
+    color: rgb(185, 185, 185);
+}
+
+main{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 30px;
+    
+}
+
+.card{
+    flex: 1 1 48%;
+    border-radius: 5px;
+    border: 1px solid black;
+    margin: 0.5%;
+    text-align: center;
+    padding-bottom: 15px;
+}
+
+    .card-header{
+        display: flex;
+        justify-content: space-between;
+        background-color: #0d6efd;
+        padding: 5px 10px;
+        color: rgb(233, 233, 233);
+    }
+
+section a{
+    background-color: #198754;
+    padding: 5px 10px;
+    border-radius: 10px;
+
+}
+
+.btn-edit{
+    background-color: #ffc107;
+    color: black;
+    padding: 10px;
+}
+.btn-delete{
+    background-color: #ff1707;
+    padding: 10px;
+   
+}
+
+
+table{
+    padding: 2%;
+    text-align: start;
+}
+
+thead{
+    border-bottom: 2px solid black;
+}
+
+tr{
+    display: flex; 
+    justify-content: space-between;  
+    padding: 10px 10px; 
+    border-bottom: 1px solid black ;
+    margin-bottom: 10px;
+}
+td{
+    width: 200px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.td-date{
+    width: 15%;
+}
+
+.td-button {
+    flex: 1 1 15%;
+}
+
