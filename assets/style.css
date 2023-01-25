@@ -3,8 +3,8 @@
 /* Variables couleurs globales */
 
 :root{
-    --main-bg-and-border-color:#5bdfa1d0;
-    --link-and-text-header-color:#ffe605;
+    --main-bg-and-border-color:#06493ed0;
+    --link-and-text-header-color:#d47902;
     --article-bg-color:rgba(240, 240, 240, 0.301) ;
     --section-bg-color:rgba(240, 240, 240, 0.5) ;
 }
