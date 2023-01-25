@@ -11,16 +11,16 @@ const formCours= {
     findMe: function(event){
         event.preventDefault();
 
-        let name = document.querySelector('input').value
-        console.log(name)
-        let adhérents = document.querySelectorAll('li')
-        console.log(adhérents);
+        let name = document.querySelector('input').value.toLowerCase();
+        let adhérents = document.querySelectorAll('li');
 
         for(let adhérent of adhérents){
 
-            adhérent.classList.remove('nameFound')
+            adhérent.classList.remove('nameFound');
 
-            if (adhérent.textContent === name){
+            let adhérentName = adhérent.textContent.toLowerCase()
+
+            if (adhérentName.includes(name)){
                 adhérent.classList.add('nameFound')
             }
 
