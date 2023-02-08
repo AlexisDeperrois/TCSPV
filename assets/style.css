@@ -23,7 +23,7 @@ body{
 
     background-image: url("https://images.pexels.com/photos/2339377/pexels-photo-2339377.jpeg?auto=compress&cs=tinysrgb&w=1600");
     background-size:cover;
-    background-attachment: scroll;
+    background-attachment: fixed;
 
     /* pour positionnement pied de page collé en bas  */
     display: flex;
@@ -94,6 +94,11 @@ nav{
         color: var(--link-and-text-header-color);
         transform: none;
                             
+    }
+
+    nav a:hover{
+        transform: scale(1.2);
+        transition-duration: 0.3s;
     }
 
     .nav_utilisateur{
@@ -199,10 +204,7 @@ main{
             
     }
 
-    a:hover{
-        transform: scale(1.2);
-        transition-duration: 0.3s;
-    }
+ 
 
 
 
