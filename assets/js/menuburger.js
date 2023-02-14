@@ -1,12 +1,8 @@
 const menuburger ={
 
     init : function (){
-        console.log("init ok");
-
         let btn = document.querySelector(".burger_btn");
-
-        console.log(btn);
-        
+               
         btn.addEventListener("click", menuburger.showOrHideMenu);
     },
 

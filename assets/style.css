@@ -208,11 +208,10 @@ main{
 
             padding: 10px; 
             border-radius: 10px;
-
             
     }
 
- 
+    
 
 
 
@@ -323,38 +322,43 @@ p.last-actu{
 
 /*  ----------------------------------------------------    style le-club   ---------------------------------------- */
  
-    .slider {
+    .slider{
         position: relative;
-        height: 50vh;
-        width: 100%;
+        background-color: black;
         display: flex;
         align-items: center;
-        justify-content: space-between;
-        
+        justify-content: center;
+        height: 30vh;
+                
     }
     
-    .slider__img {
+    .slide{
         position: absolute;
-        top: 0;
-        left: 0;
-        
+        max-height: 100%;
         width: auto;
-        height: auto;
-        object-fit: cover;
-        opacity: 0;
-        transition: opacity .3s;
+        margin-right: auto;
+        margin-left: auto;
+        display: none;
+                
     }
-    
-    .slider__img--current {
-        opacity: 1;
-        z-index: 1;
+
+    .slide_active{
+        display:block
     }
+
     
-    .slider__btn {
-        position: relative;
+    .slider_btn {
+        position: absolute;
         z-index: 2;
         font-weight: bold;
         background-color: var(--main-bg-and-border-color);
+    }
+
+    .slider_btn_left{
+        left:0;
+    }
+    .slider_btn_right{
+        right: 0px;
     }
        
 
@@ -494,6 +498,17 @@ td::before{
     margin-top: 20px;
 }
 
+
+.album{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    width: 75vw;
+}
+
+
+
 /*  ----------------------------------------------------    style Contact  ---------------------------------------- */
 section.contact{
     text-align: center;
@@ -610,6 +625,19 @@ section.calendrier{
 .progression li{
     padding: 5px;
 }
+
+
+.slider{
+    height: 60vh;
+    width:65%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+
+
+
 
 
 

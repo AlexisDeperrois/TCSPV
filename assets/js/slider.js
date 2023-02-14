@@ -1,9 +1,5 @@
 let index= 0;
-const sliderImages = [
-    'gymnase.jpg',
-    'filet.jpg',
-    'image-accueil.jpg',
-    ];
+const sliderImages = document.querySelectorAll('.slide')
 
 
 const sliders= {
@@ -11,44 +7,30 @@ const sliders= {
 
     init: function(){
 
-        
+        sliderImages[0].classList.add('slide_active'); 
 
-        const addImg = document.createElement("img");
-        addImg.src="assets/images/gymnase.jpg";
-        addImg.classList.add("slider__img","slider__img--current");      
-        
-        const slider = document.querySelector(".slider");
-        slider.appendChild(addImg);
-        
-        
-        const btnSlider = document.querySelectorAll(".slider__btn");
-        buttonPrécédent = btnSlider[0];
-        buttonSuivant = btnSlider[1];
-
-
-        buttonPrécédent.addEventListener("click", sliders.slidePrecedent);
-        buttonSuivant.addEventListener("click", sliders.slideSuivant);
+        document.querySelector(".slider_btn_left").addEventListener("click", sliders.slidePrecedent);
+        document.querySelector(".slider_btn_right").addEventListener("click", sliders.slideSuivant);
     },
 
     slideSuivant: function(){
+        document.querySelector('.slide_active').classList.remove('slide_active');
         index++;
         if(index > sliderImages.length-1){
         index = 0
         };
-        let image = document.querySelector(".slider__img");
-        image.src = "assets/images/"+ sliderImages[index];
+        sliderImages[index].classList.add('slide_active');
     },
 
     slidePrecedent: function(){
+        document.querySelector('.slide_active').classList.remove('slide_active');
         index--;
         if(index<0){
         index = sliderImages.length - 1
         };
-        let image = document.querySelector(".slider__img");
-        image.src = "assets/images/"+ sliderImages[index];
+        sliderImages[index].classList.add('slide_active');
+        
     },
-
-
 
 };
 
