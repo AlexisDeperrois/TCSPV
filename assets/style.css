@@ -7,6 +7,7 @@
     --link-and-text-header-color:#d47902;
     --article-bg-color:rgba(240, 240, 240, 0.301) ;
     --section-bg-color:rgba(240, 240, 240, 0.5) ;
+    --basic-text-color: rgb(3, 40, 65);
 }
 
 
@@ -34,7 +35,7 @@ body{
     
 
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    color: rgb(3, 79, 151);
+    color: var(--basic-text-color)
     
 }
 
@@ -73,6 +74,7 @@ header{
 
 /*  ------------------------------------------------- nav ---------------------------------------- */           
 nav{
+    z-index: 10;
 
     position: fixed;
     top: 45px;
@@ -164,7 +166,8 @@ main{
         margin: 1.5vw;
         padding: 1.5vh;
         border-radius: 1vh;
-        width: 100%;
+        max-width: 100%;
+        
                                         
     }
 
@@ -211,6 +214,13 @@ main{
             
     }
 
+    .a-inline  {
+        display: inline;
+        color: var(--main-bg-and-border-color);
+        background:none;
+        text-decoration: underline;
+        padding: none;
+    }
     
 
 
@@ -323,6 +333,7 @@ p.last-actu{
 /*  ----------------------------------------------------    style le-club   ---------------------------------------- */
     .infrastructures{
         text-align: center;
+        width: 100%;
     }
     .slider{
         position: relative;
@@ -331,6 +342,7 @@ p.last-actu{
         align-items: center;
         justify-content: center;
         height: 30vh;
+        width: 100%;
                 
     }
     
@@ -424,22 +436,26 @@ figcaption{
 }
 
 
+/* mise en forme général tableau */
 table{
     margin-left: auto;
     margin-right: auto;
-    
-}
-
-th, td {
+    border-collapse: collapse;
+        }
+ th,td {
     border:1px solid black;
-    width:15%;
     padding: 5px;
-    background-color: var(--article-bg-color);
-    
+    background-color: var(--article-bg-color); 
 }
 
-tr td:first-child{
+/* mise en forme spécifique planning */
+ th.table-planning,td.table-planning {
+    width:15%;     
+}
+
+ tr.table-planning td:first-child{
     text-align: center;
+    width: 5%;
 }
 
 .nameFound{
@@ -450,42 +466,64 @@ tr td:first-child{
     text-align: center;
 }
 
-
+/* mise en forme pour mobile du planning */
 @media screen and (max-width: 480px){
-table{
-    margin-left: auto;
-    margin-right: auto;
-    
-}
+
+    .table-tarif{
+        font-size: 2.5vw;
+    }
+
+    .table-planning{
+        margin-left: auto;
+        margin-right: auto;
+        
+    }
 
 
-th, td {
+    th.table-planning,td.table-planning {
     border:1px solid black;
     width:100%;
     padding: 5px;
     background-color: var(--article-bg-color);
     
+    }
+
+    th.table-planning{
+        display: none;
+    }
+
+    tr.table-planning{
+        display: flex;
+        flex-direction: column;
+        
+    }
+
+    tr.table-planning td:first-child{
+        display: none;
+    }
+
+    td.table-planning::before{
+        content: attr(data-label);
+        
+    }
+    
 }
 
-th{
-    display: none;
-}
 
-tr{
-    display: flex;
+
+/* ------------------------------------------------- style info-adhésion ----------------------------------------- */
+
+.section-inscription{
+    display:flex;
     flex-direction: column;
-    
+    align-items: center;
+    gap: 30px;
 }
 
-tr td:first-child{
-    display: none;
+.article-inscription{
+    max-width: 75%;
 }
 
-td::before{
-    content: attr(data-label);
-    
-}
-}
 /*  ----------------------------------------------------    style Galerie  ---------------------------------------- */
 
 
@@ -521,8 +559,19 @@ td::before{
     width: 75vw;
 }
 
+/* -----------------------------------------------------style partenaires page ------------------------------------- */
 
-
+article.partenaire p:nth-child(2){
+    margin-bottom: 15px;
+}
+.en-tete-partenaire{
+    align-items: center;
+    display: flex;
+    gap:10px;
+}
+.en-tete-partenaire h3{
+    padding-top: 10px;
+}
 /*  ----------------------------------------------------    style Contact  ---------------------------------------- */
 section.contact{
     text-align: center;
@@ -599,8 +648,31 @@ nav {
     top: 12vh;
 }
 
+section a{
+    max-width: 40%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;     
+
+}
+
 .burger_btn{
     display: none;
+}
+
+footer{
+    position: fixed;
+    top: 100px;
+    right: 0;
+
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+
+    
+    width: 12vw;
+
+    padding: 15px;
+
 }
 
 .banniere{
@@ -684,6 +756,19 @@ section.match-equipes{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+}
+
+section.partenaires{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+section.partenaires h2{
+    flex: 1 1 100%;
+    
+}
+article.partenaire{
+    max-width: 30%;
 }
 
 }

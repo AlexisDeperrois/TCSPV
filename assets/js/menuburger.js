@@ -7,7 +7,6 @@ const menuburger ={
     },
 
     showOrHideMenu : function (){
-        console.log("ça clic")
         let nav = document.querySelector('nav');
         nav.classList.toggle("show");
 
